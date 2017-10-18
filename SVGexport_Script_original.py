@@ -7,8 +7,8 @@ import json,requests,urllib2,math
 #'''
 
 pNLFID = 'SFRAIR00270**N'
-pCTL_BEGIN = 0
-pCTL_END = 3
+pCTL_BEGIN = 6
+pCTL_END = 9
 #imagedimensions = '1200,300'
 #imageformat = 'svg'
 #outputname = '{}_{}_{}.{}'.format(pNLFID.replace('*','-'),str(pCTL_BEGIN).replace('.','-'),str(pCTL_END).replace('.','-'),imageformat)
