@@ -35,18 +35,19 @@ for feature in DynSegResp.json()['features']:
         x2 = point[-1][0]
         y2 = point[-1][1]
         rotation = math.degrees(math.atan2(y2 - y1,x2 - x1)) * -1
-        dist = math.hypot(max(xlist)-min(xlist),max(ylist)-min(ylist))
+    dist = math.hypot(max(xlist)-min(xlist),max(ylist)-min(ylist))
     print rotation
 #       print dist
     # Bounding Box
-    boundingbox = '{0},{1},{2},{3}'.format(min(xlist),min(ylist),max(xlist),max(ylist))
-    print boundingbox
+#    boundingbox = '{0},{1},{2},{3}'.format(min(xlist),min(ylist),max(xlist),max(ylist))
+#    print boundingbox
     xmin = (min(xlist) + max(xlist))/2-(dist/2)
     xmax = (min(xlist) + max(xlist))/2+(dist/2)
-    ymin = (min(ylist)+max(ylist))/2-(dist/4.8)
-    ymax = (min(ylist)+max(ylist))/2+(dist/4.8)
-    boundingbox = '{0},{1},{2},{3}'.format(xmin*0.99998,ymin*0.99998,xmax*1.00002,ymax*1.00002)
-#       print boundingbox
+    ymin = (min(ylist) + max(ylist))/2+(dist/4.8)-(dist/4.8)
+    ymax = (min(ylist) + max(ylist))/2+(dist/4.8)q+(dist/4.8)
+    boundingbox = '{0},{1},{2},{3}'.format(xmin,ymin,xmax,ymax)
+#    boundingbox = '{0},{1},{2},{3}'.format(xmin-240,ymin-100,xmax+240,ymax+100)
+    print boundingbox
 #            mapdata = {'bbox':boundingbox,'size':imagedimensions,'format':imageformat,'rotation':rotation,'f':'pjson'}
 #            MapExportResp = requests.get("https://collectornew.dot.state.oh.us/arcgis/rest/services/BOUNDARIES/Boundaries/MapServer/export", params=mapdata)
 #            file = urllib2.urlopen(MapExportResp.json()['href'])
