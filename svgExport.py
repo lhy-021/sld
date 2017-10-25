@@ -42,7 +42,7 @@ while CTL_BEGIN <= 6:
             # create a bufferer around bbox
             boundingbox = '{0},{1},{2},{3}'.format(xmin*0.99998,ymin*0.99998,xmax*1.00002,ymax*1.00002)
     #       print boundingbox
-
+    
             mapPayload = {'bbox':boundingbox,'size':imagedimensions,'format':imageformat,'rotation':rotation,'f':'image', 'format':'png'}
             MapExportResp = requests.get("https://collectornew.dot.state.oh.us/arcgis/rest/services/BOUNDARIES/Boundaries/MapServer/export", params=mapPayload)
             #  write out to file
